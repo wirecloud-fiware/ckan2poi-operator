@@ -1,0 +1,3 @@
+This operator transforms data from a CKAN source to Points of Interest. To be able to do so, the dataset should provide a column containing the coordinates for each row or, alternatively, two columns, one with the latitude an another one with the longitude. Also, take into account the fact this operator is generic, so marker bubbles of the PoIs created by this operator will be a mere composition of the attribute/value pairs.
+
+If your are a developer, an option for improving information shown in the associated point of interest bubbles is to download this operator an use it as an skeleton for your improved version of the operator. *Remember to change the id metadata* (vendor, name and version) before uploading it again.
