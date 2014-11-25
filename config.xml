@@ -8,7 +8,7 @@
     <image>images/catalogue.png</image>
     <description>Convert data from CKAN into Point of Interests (usable by map widgets).</description>
     <longdescription>DESCRIPTION.md</longdescription>
-    <doc>https://github.com/Wirecloud/ckan2poi-operator</doc>
+    <doc>https://github.com/wirecloud-fiware/ckan2poi-operator</doc>
     <changelog>doc/changelog.md</changelog>
   </details>
   <preferences>
