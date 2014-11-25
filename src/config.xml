@@ -14,7 +14,8 @@
     <changelog>doc/changelog.md</changelog>
   </details>
   <preferences>
-    <preference name="coordinates_attr" label="Coordinates attribute" description="Name of the columns where the coordinates are stored. If the dataset provides the coordinates through a pair of columns, you can pass those names using a comma (e.g. 'latitude, longitude')" default="position" type="text"/>
+      <preference name="coordinates_attr" label="Coordinates attribute" description="Name of the columns where the coordinates are stored. If the dataset provides the coordinates through a pair of columns, you can pass those names using a comma (e.g. 'latitude, longitude')" default="position" type="text"/>
+      <preference name="marker-icon" label="Marker Icon" description="Absolute URL pointing to an image that will be used for the markers created by this operator. Leave this setting empty for using the default marker icon" default="" type="text"/>
   </preferences>
   <wiring>
     <outputendpoint name="poiOutput" type="text" label="PoI" description="Transformed Point of Interest from the received dataset" friendcode="poi"/>
