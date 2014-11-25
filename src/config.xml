@@ -8,6 +8,8 @@
     <image>images/catalogue.png</image>
     <description>Convert data from CKAN into Point of Interests (usable by map widgets).</description>
     <longdescription>DESCRIPTION.md</longdescription>
+    <license>Apache License 2.0</license>
+    <licenseurl>http://www.apache.org/licenses/LICENSE-2.0.html</licenseurl>
     <doc>https://github.com/wirecloud-fiware/ckan2poi-operator</doc>
     <changelog>doc/changelog.md</changelog>
   </details>
