@@ -54,7 +54,7 @@
         }
     };
 
-    var topoi = function topoi(entity) {
+    var topoi = function topoi(entity, id_prefix) {
         var coordinates = null;
         var coordinates_pref = MashupPlatform.prefs.get('coordinates_attr');
         var attributes = coordinates_pref.split(new RegExp(',\\s*'));
@@ -73,20 +73,27 @@
 
         if (coordinates) {
             coordinates.system = "WGS84";
-            MashupPlatform.wiring.pushEvent("poiOutput", JSON.stringify(entity2poi(entity, coordinates)));
+            MashupPlatform.wiring.pushEvent("poiOutput", JSON.stringify(entity2poi(entity, coordinates, id_prefix)));
         }
     };
 
     MashupPlatform.wiring.registerCallback("entityInput", function (entityString) {
-        var data = JSON.parse(entityString).data;
+        var info = JSON.parse(entityString);
+        var data = info.data;
+        var id_prefix = "";
+
+        if (info.resource_id) {
+            id_prefix = info.resource_id + ':';
+        }
+
         for (var i = 0; i < data.length; i++) {
-            topoi(data[i]);
+            topoi(data[i], id_prefix);
         }
     });
 
-    var entity2poi = function entity2poi(entity, coordinates) {
+    var entity2poi = function entity2poi(entity, coordinates, id_prefix) {
         var poi = {
-            id: "" + entity._id,
+            id: id_prefix + entity._id,
             icon: icon,
             tooltip: "" + entity._id,
             data: entity,
