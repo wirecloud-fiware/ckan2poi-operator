@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2014 CoNWeT Lab., Universidad Politécnica de Madrid
+ * Copyright (c) 2014-2015 CoNWeT Lab., Universidad Politécnica de Madrid
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -54,7 +54,7 @@
         }
     };
 
-    var topoi = function topoi(entity, id_prefix) {
+    var topoi = function topoi(entity, id_prefix, collection) {
         var coordinates = null;
         var coordinates_pref = MashupPlatform.prefs.get('coordinates_attr');
         var attributes = coordinates_pref.split(new RegExp(',\\s*'));
@@ -73,7 +73,7 @@
 
         if (coordinates) {
             coordinates.system = "WGS84";
-            MashupPlatform.wiring.pushEvent("poiOutput", JSON.stringify(entity2poi(entity, coordinates, id_prefix)));
+            collection.push(entity2poi(entity, coordinates, id_prefix));
         }
     };
 
@@ -81,14 +81,17 @@
         var info = JSON.parse(entityString);
         var data = info.data;
         var id_prefix = "";
+        var collection = [];
 
         if (info.resource_id) {
             id_prefix = info.resource_id + ':';
         }
 
         for (var i = 0; i < data.length; i++) {
-            topoi(data[i], id_prefix);
+            topoi(data[i], id_prefix, collection);
         }
+
+        MashupPlatform.wiring.pushEvent("poiOutput", JSON.stringify(collection));
     });
 
     var entity2poi = function entity2poi(entity, coordinates, id_prefix) {

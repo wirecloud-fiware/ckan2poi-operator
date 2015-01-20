@@ -18,7 +18,7 @@
       <preference name="marker-icon" label="Marker Icon" description="Absolute URL pointing to an image that will be used for the markers created by this operator. Leave this setting empty for using the default marker icon" default="" type="text"/>
   </preferences>
   <wiring>
-    <outputendpoint name="poiOutput" type="text" label="PoI" description="Transformed Point of Interest from the received dataset" friendcode="poi"/>
+    <outputendpoint name="poiOutput" type="text" label="Transformed PoIs" description="Transformed Point of Interest from the received dataset" friendcode="poi-list"/>
     <inputendpoint name="entityInput" type="text" label="Entity" description="Received dataset will be transformed into PoIs" friendcode="entity"/>
   </wiring>
   <scripts>
