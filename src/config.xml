@@ -2,7 +2,7 @@
 <operator xmlns="http://wirecloud.conwet.fi.upm.es/ns/macdescription/1" vendor="CoNWeT" name="ckan2poi" version="1.0.1">
   <details>
     <title>CKAN to PoIs</title>
-    <homepage>https://github.com/wirecloud-fiware/ckan2poi</homepage>
+    <homepage>https://github.com/wirecloud-fiware/ckan2poi-operator</homepage>
     <authors>Álvaro Arranz García &lt;aarranz@fi.upm.es&gt;</authors>
     <email>wirecloud@conwet.com</email>
     <image>images/catalogue.png</image>
@@ -12,6 +12,7 @@
     <licenseurl>http://www.apache.org/licenses/LICENSE-2.0.html</licenseurl>
     <doc>https://github.com/wirecloud-fiware/ckan2poi-operator</doc>
     <changelog>doc/changelog.md</changelog>
+    <issuetracker>https://github.com/wirecloud-fiware/ckan2poi-operator/issues</issuetracker>
   </details>
   <preferences>
       <preference name="coordinates_attr" label="Coordinates attribute" description="Name of the columns where the coordinates are stored. If the dataset provides the coordinates through a pair of columns, you can pass those names using a comma (e.g. 'latitude, longitude')" default="position" type="text"/>

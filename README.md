@@ -5,7 +5,7 @@ This operator transforms data from a CKAN source to Points of Interest. To be ab
 
 ## Build dependencies
 
-Be sure to have installed [Node.js](https://nodejs.org/){% if (bower) { %} and [Bower](http://bower.io){% }%} in your system. For example, you can install it on Ubuntu and Debian running the following commands:
+Be sure to have installed [Node.js](https://nodejs.org/) in your system. For example, you can install it on Ubuntu and Debian running the following commands:
 
 ```bash
 sudo apt update; sudo apt install curl gnupg
